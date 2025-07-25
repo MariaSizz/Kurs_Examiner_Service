@@ -11,6 +11,13 @@ public class Question {
          this.question = question;
          this.answer = answer;
      }
+    public String getQuestion() {
+        return question;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -23,13 +30,5 @@ public class Question {
     @Override
     public int hashCode() {
         return Objects.hash(getQuestion(), getAnswer());
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
     }
 }
