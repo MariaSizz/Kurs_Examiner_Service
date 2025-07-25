@@ -19,7 +19,9 @@ public class JavaQuestionServiceTest {
     void testAddQuestion(){
         Question question = new Question("Сколько", "Много");
         service.add(question);
+
         final Collection<Question> questions = service.getAll();
+
         assertTrue(questions.contains(question));
         assertEquals(6, questions.size());
     }
@@ -28,10 +30,15 @@ public class JavaQuestionServiceTest {
     void testRemoveQuestion(){
         Question question = new Question("Сколько", "Мало");
         service.add(question);
+
         Collection<Question> questions = service.getAll();
+
         assertEquals(6, questions.size());
+
         service.delete(question);
+
         questions = service.getAll();
+
         assertEquals(5, questions.size());
         assertFalse(questions.contains(question));
     }
@@ -41,7 +48,9 @@ public class JavaQuestionServiceTest {
         Question question2 = new Question("Сколько", "Нормально");
         service.add(question1);
         service.add(question2);
+
         Collection<Question> questions = service.getAll();
+
         assertEquals(7, questions.size());
         assertTrue(questions.contains(question1));
         assertTrue(questions.contains(question2));
@@ -49,8 +58,11 @@ public class JavaQuestionServiceTest {
     @Test
     void testGetRandomQuestion(){
         final Question randomQuestion = service.getRandomQuestion();
+
         assertNotNull(randomQuestion);
+
         Collection<Question> questions = service.getAll();
+
         assertTrue(questions.contains(randomQuestion));
     }
 }

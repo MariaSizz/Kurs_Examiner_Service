@@ -37,7 +37,9 @@ public class ExaminerServiceImplTest {
                 new Question("Q2", "A2"),
                 new Question("Q3", "A3")
         );
+
         final Collection<Question> questions = examinerService.getQuestions(2);
+
         assertEquals(2,questions.size());
     }
 }
